@@ -1,0 +1,25 @@
+#!/bin/bash
+
+## API run as orangepi
+##  This handler performs acions as root via sudo
+
+UNAME="$1"
+
+# id -a >&2
+
+if [ "X" != "$UNAME" ]
+then
+  if getent passwd "$UNAME" > /dev/null 2>&1
+  then
+    :
+  else
+    echo 'Doing Add'
+    /usr/sbin/adduser --disabled-password --gecos '' --ingroup visitor --firstuid 2000 $UNAME && \
+    /usr/bin/cat - > /home/$UNAME/.ssh/authorized_keys
+
+    # cat /home/$UNAME/.ssh/authorized_keys
+    # /usr/sbin/userdel -r $UNAME > /dev/null 2>&1
+  fi
+fi
+
+# END
