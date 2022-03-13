@@ -66,8 +66,8 @@ export default {
     <p v-if="lognameOk" class="text-success">Success, please continue</p>
     <p v-else class="text-danger">An available login username will show Green.</p>
 
-    <b-button variant="success" v-on:click="goBack">Prev</b-button>
-    <b-button variant="success" v-on:click="goNext" class="mr-2" :disabled="! lognameOk">
+    <b-button v-on:click="goBack" class="orange-pi">Prev</b-button>
+    <b-button v-on:click="goNext" class="orange-pi mr-2" :disabled="! lognameOk">
       Next
     </b-button>
 
@@ -80,6 +80,11 @@ export default {
 
 .mr-2 {
   margin-left: 0.5em;
+}
+
+.orange-pi {
+  background-color: #E58D04;
+  border-color: #E58D04;
 }
 
 </style>

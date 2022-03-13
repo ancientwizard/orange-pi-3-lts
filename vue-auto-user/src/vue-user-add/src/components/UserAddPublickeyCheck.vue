@@ -54,7 +54,7 @@ export default {
 
     <p>
       An Open-SSH formatted public key contains two pieces separted by a space.
-      The first part is entirely based on the type of key, it indicated the type of key.
+      The first part is entirely based on the type of key, it indicates the type of key.
       The second part is the actual key encoded as BAS64.
       <ul>
        <li>Part 1 example: ssh-ed25519</li>
@@ -71,10 +71,10 @@ export default {
       placeholder="Enter a SSH Public key to authenticate your login."
     ></b-form-input>
     <p v-if="publickeyOk" class="text-success">Success, please continue</p>
-    <p v-else class="text-danger">A useable public key show Green.</p>
+    <p v-else class="text-danger">A useable public key shows as Green.</p>
 
-    <b-button variant="success" v-on:click="goBack">Prev</b-button>
-    <b-button variant="success" v-on:click="goNext" class="mr-2" :disabled="! publickeyOk">
+    <b-button v-on:click="goBack" class="orange-pi">Prev</b-button>
+    <b-button v-on:click="goNext" class="orange-pi mr-2" :disabled="! publickeyOk">
       Next
     </b-button>
 
@@ -85,6 +85,11 @@ export default {
 
 .mr-2 {
   margin-left: 0.5em;
+}
+
+.orange-pi {
+  background-color: #E58D04;
+  border-color: #E58D04;
 }
 
 </style>

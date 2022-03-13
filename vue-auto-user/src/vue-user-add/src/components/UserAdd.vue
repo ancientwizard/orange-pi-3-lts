@@ -101,12 +101,9 @@ export default {
           border-variant="light"
           border-width="4"
           header="Orange PI 3 LTS"
-          header-class="h3"
-          header-bg-variant="success"
+          header-class="h3 orange-pi"
           header-text-variant="white"
           body-bg-variant="light"
-          x-img-src="/img/orange_pi_logotyp.png"
-          x-img-top
           class="mb-4"
         >
           <h3> Account Request Service </h3>
@@ -126,7 +123,7 @@ export default {
                </ol>
             </p>
 
-            <b-button variant="success" autofocus v-on:click="doNext">Ready to Continue?</b-button>
+            <b-button class="orange-pi" autofocus v-on:click="doNext">Ready to Continue?</b-button>
           </div>
 
           <!-- collect logname -->
@@ -142,7 +139,7 @@ export default {
           <!-- Submit Create Create  -->
           <div v-if="this.phaseIndex == 3">
             <p class="text-dark">
-              The logname and SSH Publick key has passed the sniff test. The account name is
+              The logname and SSH Public key has passed the sniff test. The account name is
               available, or it was at the time of the check. The SSH Public key has passed
               inspection test.
             </p>
@@ -152,8 +149,8 @@ export default {
               <li>{{ publickeyTxt.substr(0,25) }}... --snip--</li>
             </ul>
 
-            <b-button variant="success" v-on:click="doCancel">Cancel</b-button>
-            <b-button variant="success" v-on:click="doCreate" class="mr-2" :disabled="! publickeyOk">
+            <b-button v-on:click="doCancel" class="orange-pi">Cancel</b-button>
+            <b-button v-on:click="doCreate" class="orange-pi mr-2" :disabled="! publickeyOk">
               Create Now
             </b-button>
 
@@ -186,7 +183,7 @@ export default {
               </ul>
             </div>
 
-            <b-button variant="success" v-on:click="doCancel">Done</b-button>
+            <b-button v-on:click="doCancel" class="orange-pi">Done</b-button>
           </div>
 
         </b-card>
@@ -210,6 +207,11 @@ h4 {
 
 .mr-2 {
   margin-left: 0.5em;
+}
+
+.orange-pi {
+  background-color: #E58D04;
+  border-color: #E58D04;
 }
 
 .greetings h1,
